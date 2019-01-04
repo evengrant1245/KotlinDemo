@@ -1,5 +1,6 @@
 package com.example.gurup.kotlindemo
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,6 +20,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         hello.setText("Hi")
+
+        hello.setOnClickListener {
+            hello.setText("Hello")
+
+            var nextIntent = Intent(this ,SecondActivity::class.java)
+            nextIntent.putExtra("key", "AB")
+
+            startActivity(nextIntent)
+        }
 
         dummy="assadasd"
         ddd="sndnasd"
